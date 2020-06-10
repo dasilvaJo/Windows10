@@ -1,0 +1,151 @@
+html, body{
+    background-image: url("../images/veille/background.jpg");
+}
+
+#hour{
+    position: absolute;
+    width: 234px;
+    height: 133px;
+    left: 104px;
+    top: 307px;
+
+    font-family: Microsoft JhengHei, Arial;
+    font-style: normal;
+    font-weight: 290;
+    font-size: 100px;
+    line-height: 133px;
+    color: #FFFFFF;
+    animation: 2s ease hourEntry;
+}
+
+#date{
+    position: absolute;
+    width: 379px;
+    height: 64px;
+    left: 104px;
+    top: 445px;
+
+    font-family: Microsoft JhengHei;
+    font-style: normal;
+    font-weight: 290;
+    font-size: 48px;
+    line-height: 64px;
+    color: #FFFFFF;
+    opacity: 0.6;
+    animation: 2s ease dateEntry;
+}
+
+#scroll{
+    position: absolute;
+    width: 55.79px;
+    height: 33px;
+    left: 655.61px;
+    bottom : 30px;
+    opacity: 0.7;
+    animation: 2s ease hourEntry, 2s ease scrollOpacity infinite;
+    cursor: pointer;
+}
+
+
+@keyframes hourEntry{
+    from{transform: translateY(-40%);opacity: 0}
+    to{transform: translateY(0);opacity: 1}
+}
+
+@keyframes dateEntry{
+    from{transform: translateY(40%);opacity:0}
+    to{transform: translateY(0);opacity:0.6}
+}
+
+@keyframes scrollOpacity{
+    50%{opacity:0.3}
+    100%{opacity:0.7}
+}
+
+/*Seconde Partie*/
+#userLogo{
+    position: absolute;
+    width: 193px;
+    height: 193px;
+    left: 586px;
+    top: 101px;
+    opacity:0;
+    visibility: hidden;
+}
+
+#userName{
+    position: absolute;
+    width: 327px;
+    height: 59px;
+    left: 519px;
+    top: 264px;
+    
+    font-family: Microsoft JhengHei;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 36px;
+    line-height: 59px; 
+    text-align: center;   
+    color: #FFFFFF;
+    opacity:0;
+    visibility: hidden;  
+}
+
+#textarea{
+    position: absolute;
+    width: 331px;
+    height: 34px;
+    left: 517px;
+    top: 403px;
+    opacity:0;
+    visibility: hidden; 
+}
+
+#textarea img, #textarea input, #textarea #validation{
+    position: absolute;
+}
+
+#textarea input{
+    border: none;
+    min-width: 270px;
+    max-width: 270px;
+    min-height: 25px;
+    max-height: 25px;
+    top: 3px;
+    left: 3px;
+}
+
+#textarea #validation{
+    width: 50px;
+    height: 34px;
+    opacity:0;
+    right:0;
+    cursor: pointer;
+}
+
+#errorPass{
+    position: absolute;
+    width: 159px;
+    height: 19px;
+    left: 603px;
+    top: 451px;
+
+    font-family: Microsoft JhengHei;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    text-align: center;
+    color: #FF6565;
+    visibility: hidden;
+}
+
+@keyframes veille2Entry{
+    from{opacity:0;visibility: visible}
+    to{opacity: 1;transform: scale(1.1);visibility: visible;}
+}
+
+@keyframes bgOpacity{
+    from{opacity:0;visibility: visible;}
+    to{opacity:0.2;visibility: visible;}
+}

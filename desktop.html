@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows10</title>
+    <link href="css/general.css" rel="stylesheet">
+    <link href="css/desktop.css" rel="stylesheet">
+    <link rel="icon" href="images/logo.png">   
+</head>
+<body onload="desktopLoad()"> 
+    <div id="backgroundD"></div>
+
+    <div id="icon1" onclick="openBin()">
+        <img src="images/desktop/bin.png" alt="bin">
+        <div id="frame1"></div>
+    </div>
+
+    <div id="file">
+        <div id="headerFile">
+            <div id="closeFrame" onclick="closeFile()">
+                <img src="images/desktop/close.svg" alt="close">
+            </div>
+            <div id="growFrame" onclick="growFile()">
+                <img src="images/desktop/grow.svg" alt="grow">
+            </div>
+            <div id="smallFrame">
+                <img src="images/desktop/small.svg" alt="small">
+            </div>
+        </div>
+    </div>
+
+    <footer id="toolbar">
+        <img id="windowLogo" src="images/desktop/windowLogo.svg" alt="windowLogo">
+    </footer>
+    <script src="js/desktop.js"></script>
+</body>
+</html>

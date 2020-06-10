@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Windows10</title>
+    <link href="css/general.css" rel="stylesheet">
+    <link href="css/veille.css" rel="stylesheet">
+    <link rel="icon" href="images/logo.png">   
+</head>
+<body>
+    <div id="background"></div>
+    <div id="loading"></div>
+    <h1 id="hour"></h1>
+    <h2 id="date"></h2>
+    <img id="scroll" src="images/veille/scroll.svg" alt="scroll" onclick="showVeille2()">
+    <img id="userLogo" src="images/veille/userLogo.svg" alt="userLogo">
+    <h2 id="userName">Windows Dix</h2>
+    <div id="textarea">
+        <img src="images/veille/textarea.svg" alt="textarea">
+        <input id="password" type="password" name="password" maxlength="8" required>
+        <div id="validation" onclick="login()"></div>
+    </div>
+    <p id="errorPass">Mot de passe incorrecte</p>
+    
+    <script src="js/veille.js"></script>
+</body>
+</html>
