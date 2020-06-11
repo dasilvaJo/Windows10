@@ -19,7 +19,7 @@ html, body{
     top: 7px;
 }
 
-#frame1{
+#frame1, #frame2, #frame3, #frame4{
     position: absolute;
     width: 100%;
     height: 100%;
@@ -30,17 +30,43 @@ html, body{
     cursor: pointer;
 }
 
-#icon1 img{
+#icon1 img, #icon2 img, #icon3 img, #icon4 img{
     position: absolute;
     width:100%;
 }
 
-#frame1:hover{
+#frame1:hover, #frame2:hover, #frame3:hover, #frame4:hover{
     opacity: 0.3;
 }
 
-#file{
+#icon2{
     position: absolute;
+    width: 61px;
+    height: 61px;
+    left: 8px;
+    top: 80px;
+}
+
+#icon3{
+    position: absolute;
+    width: 61px;
+    height: 61px;
+    left: 8px;
+    top: 160px;
+}
+
+#icon4{
+    position: absolute;
+    width: 61px;
+    height: 61px;
+    left: 8px;
+    top: 240px;
+}
+
+
+#file{
+    position: fixed;
+    z-index: 1;
     width: 786px;
     height: 430px;
     left: 259px;
@@ -113,32 +139,81 @@ html, body{
     background: #E2E2E2;
 }
 
+#chromePage{
+    position: fixed;
+    z-index: 1;
+    width: 80%;
+    height: 90%;
+    background: white;
+    opacity: 0;
+    visibility: hidden;
+}
 
-#toolbar{
+#chromePage h1,#file h1, #spotify h1, #snakePage h1{
+    position: absolute;
+    top: 5px;
+    left: 15px;
+
+    font-family: Microsoft JhengHei;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 13px;
+    line-height: 15px;
+    color: #000000;
+}
+
+#chromePage iframe{
+    position: absolute;
+    width: 99%;
+    left:0.5%;
+    top: 7%;
+    height: 92%;
+}
+
+#headerChrome{
     position: absolute;
     width: 100%;
-    height: 41px;
-    left: 0px;
-    bottom: -41px;
-    background: #515151;
+    height: 35px;
+    top:0;
+    background: white;
 }
 
-#windowLogo{
+#spotify{
+    position: fixed;
+    z-index: 1;
+    width: 80%;
+    height: 90%;
+    background: white;
+    opacity: 0;
+    visibility: hidden;
+}
+
+#spotify iframe, #snakePage iframe{
     position: absolute;
-    width: 23px;
-    height: 23px;
-    left: 20px;
-    top:25%;
-    transition: 0.3s;
-    cursor: pointer;
+    width: 99%;
+    left:0.5%;
+    top: 7%;
+    height: 92%;
 }
 
-#windowLogo:hover{
-    transform: scale(1.1);
+#headerSpotify{
+    position: absolute;
+    width: 100%;
+    height: 35px;
+    top:0;
+    background: white;
 }
-@keyframes toolbarUp{
-    100%{transform: translateY(-41px)}
+
+#snakePage{
+    position: fixed;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0;
+    visibility: hidden;
 }
+
 
 @keyframes openFile{
     from{opacity:0;visibility:visible}

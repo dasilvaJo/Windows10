@@ -1,0 +1,73 @@
+#rightMenu{
+    position: absolute;
+    width: 166px;
+    height: 100px;
+    background: #515151;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.45);
+    opacity: 0;
+    visibility: hidden;
+}
+
+#newCMButton{
+    position: absolute;
+    width: 100%;
+    height: 25px;
+    background: #515151;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+}
+
+#cutCMButton{
+    position: absolute;
+    width: 100%;
+    height: 26px;
+    top: 24px;
+    background: #515151;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+}
+
+#copyCMButton{
+    position: absolute;
+    width: 100%;
+    height: 25px;
+    top: 49px;
+    background: #515151;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+}
+
+#pasteCMButton{
+    position: absolute;
+    width: 100%;
+    height: 25px;
+    top: 73px;
+    background: #515151;
+    border: 1px solid #FFFFFF;
+    box-sizing: border-box;
+}
+
+#newCMButton p, #cutCMButton p, #copyCMButton p, #pasteCMButton p{
+    position: absolute;
+    top:-12px;
+    left:30px;
+    font-family: Microsoft JhengHei;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 19px;
+    display: flex;
+    align-items: center;
+    color: #FFFFFF;
+    cursor: default;
+}
+
+#pasteCMButton p{
+    opacity: 0.5;
+}
+
+#copyCMButton:hover, #pasteCMButton:hover, #cutCMButton:hover, #newCMButton:hover{
+    background: #787676;
+}

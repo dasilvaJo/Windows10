@@ -1,20 +1,24 @@
-var d = new Date();
-var days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
-var day = days[d.getDay()];
-var dayN = d.getDate();
-var month = d.getMonth();
-var monthArr = ["janvier", "février","mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre","décembre"];
-month = monthArr[month];
-var hour = d.getHours();
-var minute = d.getMinutes();
-if(minute<10){
-    minute = "0"+minute;
+time();
+function time(){
+    var d = new Date();
+    var days = ["Dimanche", "Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi"];
+    var day = days[d.getDay()];
+    var dayN = d.getDate();
+    var month = d.getMonth();
+    var monthArr = ["janvier", "février","mars", "avril", "mai", "juin", "juillet", "août", "septembre", "octobre", "novembre","décembre"];
+    month = monthArr[month];
+    var hour = d.getHours();
+    var minute = d.getMinutes();
+    if(minute<10){
+        minute = "0"+minute;
+    }
+    if(hour<10){
+        hour = "0"+hour;
+    }
+    document.getElementById('hour').innerHTML = hour+":"+minute;
+    document.getElementById("date").innerHTML = day+" "+dayN+" "+month;
+    setTimeout('time()',100);
 }
-if(hour<10){
-    hour = "0"+hour;
-}
-document.getElementById('hour').innerHTML = hour+":"+minute;
-document.getElementById("date").innerHTML = day+" "+dayN+" "+month;
 
 function showVeille2(){
     document.getElementById('hour').style['animation'] = "2s ease showVeille2 both";
@@ -31,6 +35,7 @@ function showVeille2(){
 }
 
 function login(){
+    document.documentElement.style['cursor'] = "wait";
     document.getElementById('errorPass').style['visibility'] = "hidden";
     document.getElementById('loading').style['animation'] = "5s ease loadingAnim";
     var pass = document.getElementById("password").value;
@@ -38,9 +43,11 @@ function login(){
         if(pass=="admin"){
             window.location.href = "desktop.html";
             document.getElementById('loading').style['animation'] = "";
+            document.documentElement.style['cursor'] = "default";
         } else {
             document.getElementById('errorPass').style['visibility'] = "visible";
             document.getElementById('loading').style['animation'] = "";
+            document.documentElement.style['cursor'] = "default";
         }
     }, 5000);
 }

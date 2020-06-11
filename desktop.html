@@ -1,38 +1,151 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" onkeypress="test(event)">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Windows10</title>
     <link href="css/general.css" rel="stylesheet">
     <link href="css/desktop.css" rel="stylesheet">
+    <link href="css/toolbar.css" rel="stylesheet">
+    <link href="css/contextmenu.css" rel="stylesheet">
     <link rel="icon" href="images/logo.png">   
 </head>
-<body onload="desktopLoad()"> 
-    <div id="backgroundD"></div>
+<body onload="desktopLoad()" onmousedown="leftClick(event)"> 
+    <div id="backgroundD" onmousedown="leftClick2(event)"></div>
 
     <div id="icon1" onclick="openBin()">
         <img src="images/desktop/bin.png" alt="bin">
         <div id="frame1"></div>
     </div>
+    <div id="icon2" onclick="openFile()">
+        <img src="images/desktop/file.png" alt="file">
+        <div id="frame2"></div>
+    </div>
+    <div id="icon3" onclick="openChrome()">
+        <img src="images/desktop/chrome.png" alt="chrome">
+        <div id="frame3"></div>
+    </div>
+    <div id="icon4" onclick="openSpotify()">
+        <img src="images/desktop/spotify.png" alt="spotify">
+        <div id="frame4"></div>
+    </div>
 
-    <div id="file">
+    <div id="chromePage" onclick="changeChromeForeground()">
+        <div id="headerChrome">
+            <h1>Google Chrome</h1>
+            <div id="closeFrame">
+                <img src="images/desktop/close.svg" alt="close" onclick="closeChrome()">
+            </div>
+            <div id="growFrame">
+                <img src="images/desktop/grow.svg" alt="grow" onclick="growChrome()">
+            </div>
+            <div id="smallFrame">
+                <img src="images/desktop/small.svg" alt="small" onclick="smallChrome()">
+            </div>
+        </div>
+        <iframe id="chromeIFrame"></iframe>
+    </div>
+
+    <div id="spotify" onclick="changeSpotifyForeground()">
+        <div id="headerSpotify">
+            <h1>Spotify</h1>
+            <div id="closeFrame">
+                <img src="images/desktop/close.svg" alt="close" onclick="closeSpotify()">
+            </div>
+            <div id="growFrame">
+                <img src="images/desktop/grow.svg" alt="grow" onclick="growSpotify()">
+            </div>
+            <div id="smallFrame">
+                <img src="images/desktop/small.svg" alt="small" onclick="smallSpotify()">
+            </div>
+        </div>
+        <iframe id="spotifyIFrame" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+    </div>
+
+    <div id="file" onclick="changeFileForeground()">
         <div id="headerFile">
+            <h1>Fichiers</h1>
             <div id="closeFrame" onclick="closeFile()">
                 <img src="images/desktop/close.svg" alt="close">
             </div>
             <div id="growFrame" onclick="growFile()">
                 <img src="images/desktop/grow.svg" alt="grow">
             </div>
-            <div id="smallFrame">
+            <div id="smallFrame" onclick="smallFile()">
                 <img src="images/desktop/small.svg" alt="small">
             </div>
         </div>
     </div>
-
-    <footer id="toolbar">
-        <img id="windowLogo" src="images/desktop/windowLogo.svg" alt="windowLogo">
+    
+    <div id="toolbarFrame" onmouseover="toolbarUp()" onmouseout="toolbarDown()">
+    <footer id="toolbar" onmousedown="leftClick2(event)">
+        <img id="windowLogo" src="images/desktop/windowLogo.svg" alt="windowLogo" onclick="windowsMenuOpen()">
+        <div id="searchBar"></div>
+        <div id="fileTB">
+            <img src="images/desktop/file.png" alt="file" onclick="openFile()">
+            <div id="footerTB1"></div>
+        </div>
+        <div id="chromeTB">
+            <img src="images/desktop/chrome.png" alt="chrome" onclick="openChrome()">
+            <div id="footerTB2"></div>
+        </div>
+        <div id="spotifyTB">
+            <img src="images/desktop/spotify.png" alt="spotify" onclick="openSpotify()">
+            <div id="footerTB3"></div>
+        </div>
+        <div id="dateANDhour">
+            <p id="footerHour"></p>
+            <p id="footerDate"></p>
+        </div>
+        <img id="toolbarActive" src="images/desktop/toolbarActive.svg" alt="toolbarActive" onclick="activeToolbar()">
     </footer>
+    </div>
+    <div id="windowsMenu">
+        <div id="offSystem" onclick="stopSystem()">
+            <img src="images/desktop/off.png" alt="off">
+            <p>Arrêter le système</p>
+        </div>
+        <div id="snakeGame" onclick="launchSnake()">
+            <img src="images/desktop/snake.png" alt="snake">
+            <p>Jouer à snake</p>
+        </div>
+    </div>
+
+    <div id="snakePage">
+        <div id="headerSnake">
+            <h1>Snake</h1>
+            <div id="closeFrame" onclick="closeSnake()">
+                <img src="images/desktop/close.svg" alt="close">
+            </div>
+            <div id="growFrame">
+                <img src="images/desktop/grow.svg" alt="grow">
+            </div>
+            <div id="smallFrame">
+                <img src="images/desktop/small.svg" alt="small">
+            </div>
+        </div>
+        <iframe id="snakeIFrame" src="snake.html"></iframe>
+    </div>
+
+    <div id="rightMenu">
+        <div id="newCMButton">
+            <p>Nouveau</p>
+        </div>
+        <div id="cutCMButton">
+            <p>Couper</p>
+        </div>
+        <div id="copyCMButton">
+            <p>Copier</p>
+        </div>
+        <div id="pasteCMButton">
+            <p>Coller</p>
+        </div>
+    </div>
     <script src="js/desktop.js"></script>
+    <script src="js/general.js"></script>
+    <script src="js/dragfile.js"></script>
+    <script src="js/dragchrome.js"></script>
+    <script src="js/dragspotify.js"></script>
+    <script src="js/browser.js"></script>
 </body>
 </html>
