@@ -1,208 +1,238 @@
-#toolbarFrame{
-    position: fixed;
-    z-index: 100;
-    width: 100%;
-    height: 41px;
-    left: 0px;
-    bottom: 0;
-    background-color: rgba(0, 0, 255, 0);
+#toolbarFrame {
+  position: fixed;
+  z-index: 100;
+  width: 100%;
+  height: 41px;
+  left: 0px;
+  bottom: 0;
+  background-color: rgba(0, 0, 255, 0);
 }
-#toolbar{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    bottom: -100%;
-    background: #515151;
-}
-
-#windowLogo{
-    position: absolute;
-    width: 23px;
-    height: 23px;
-    left: 20px;
-    top:25%;
-    transition: 0.3s;
-    cursor: pointer;
+#toolbar {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: -100%;
+  background: #515151;
 }
 
-#windowLogo:hover{
-    transform: scale(1.1);
+#windowLogo {
+  position: absolute;
+  width: 23px;
+  height: 23px;
+  left: 20px;
+  top: 25%;
+  transition: 0.3s;
+  cursor: pointer;
 }
 
-#searchBar{
-    position: absolute;
-    width: 307px;
-    height: 100%;
-    left: 63px;
-    background: #FFFFFF;
-    border: 1px solid #515151;
-    box-sizing: border-box;
+#windowLogo:hover {
+  transform: scale(1.1);
 }
 
-#fileTB{
-    position: absolute;
-    width: 51px;
-    height: 100%;
-    left: 400px;
+#searchBar {
+  position: absolute;
+  width: 307px;
+  height: 100%;
+  left: 63px;
+  background: #ffffff;
+  border: 1px solid #515151;
+  box-sizing: border-box;
 }
 
-#chromeTB{
-    position: absolute;
-    width: 51px;
-    height: 100%;
-    left: 451px;
-}
-#spotifyTB{
-    position: absolute;
-    width: 51px;
-    height: 100%;
-    left: 502px;
+#fileTB {
+  position: absolute;
+  width: 51px;
+  height: 100%;
+  left: 400px;
 }
 
-#fileTB img, #chromeTB img, #spotifyTB img{
-    position: absolute;
-    top:10%;
-    left: 15%;
-    width: 70%;
+#chromeTB {
+  position: absolute;
+  width: 51px;
+  height: 100%;
+  left: 451px;
+}
+#spotifyTB {
+  position: absolute;
+  width: 51px;
+  height: 100%;
+  left: 502px;
 }
 
-#fileTB:hover, #chromeTB:hover, #spotifyTB:hover{
-    background: #787676;
+#fileTB img,
+#chromeTB img,
+#spotifyTB img {
+  position: absolute;
+  top: 10%;
+  left: 15%;
+  width: 70%;
 }
 
-#footerTB1, #footerTB2, #footerTB3{
-    position: absolute;
-    height: 3px;
-    width: 100%;
-    bottom:0;
-    background: #008BD9;
-    opacity:0;
+#fileTB:hover,
+#chromeTB:hover,
+#spotifyTB:hover {
+  background: #787676;
 }
 
-
-
-#windowsMenu{
-    position: fixed;
-    z-index: 99;
-    width: 257px;
-    height: 550px;
-    left: 0px;
-    bottom: 41px;
-    background: #585858;
-    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.45);
-    visibility: hidden;
+#footerTB1,
+#footerTB2,
+#footerTB3 {
+  position: absolute;
+  height: 3px;
+  width: 100%;
+  bottom: 0;
+  background: #008bd9;
+  opacity: 0;
 }
 
-#offSystem{
-    position: absolute;
-    width: 100%;
-    height: 41px;
-    left: 0;
-    bottom: 0;
+#windowsMenu {
+  position: fixed;
+  z-index: 99;
+  width: 257px;
+  height: 550px;
+  left: 0px;
+  bottom: 41px;
+  background: #585858;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.45);
+  visibility: hidden;
 }
 
-#snakeGame{
-    position: absolute;
-    width: 100%;
-    height: 41px;
-    left: 0;
-    bottom: 41px;
+#offSystem {
+  position: absolute;
+  width: 100%;
+  height: 41px;
+  left: 0;
+  bottom: 0;
 }
 
-#offSystem img, #snakeGame img{
-    position: absolute;
-    width: 29px;
-    height: 29px;
-    left: 17px;
-    top: 5px;
+#snakeGame {
+  position: absolute;
+  width: 100%;
+  height: 41px;
+  left: 0;
+  bottom: 41px;
 }
 
-#offSystem p, #snakeGame p{
-    position: absolute;
-    width: 188px;
-    height: 41px;
-    left: 69px;
-    top: -14px;
-    cursor: default;
-    font-family: Microsoft JhengHei;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 14px;
-    line-height: 19px;
-    display: flex;
-    align-items: center;
-    color: #FFFFFF;
+#calculatorIcon {
+  position: absolute;
+  width: 100%;
+  height: 41px;
+  left: 0;
+  bottom: 82px;
 }
 
-#offSystem:hover, #snakeGame:hover{
-    background: #787676;
+#offSystem img,
+#snakeGame img,
+#calculatorIcon img {
+  position: absolute;
+  width: 29px;
+  height: 29px;
+  left: 17px;
+  top: 5px;
 }
 
-#dateANDhour{
-    position: absolute;
-    width: 103px;
-    height: 100%;
-    right: 20px;
-    bottom: 0;
+#offSystem p,
+#snakeGame p,
+#calculatorIcon p {
+  position: absolute;
+  width: 188px;
+  height: 41px;
+  left: 69px;
+  top: -14px;
+  cursor: default;
+  font-family: Microsoft JhengHei;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 19px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
 }
 
-#dateANDhour:hover{
-    background: #787676;
+#offSystem:hover,
+#snakeGame:hover,
+#calculatorIcon:hover {
+  background: #787676;
 }
 
-#footerHour{
-    position: absolute;
-    top: -7px;
-    left: 34px;
-    cursor: default;
-    font-family: Microsoft JhengHei;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    color: #FFFFFF;
+#dateANDhour {
+  position: absolute;
+  width: 103px;
+  height: 100%;
+  right: 20px;
+  bottom: 0;
 }
 
-#footerDate{
-    position: absolute;
-    top: 7px;
-    left: 18px;
-    cursor: default;
-    font-family: Microsoft JhengHei;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 12px;
-    line-height: 16px;
-    display: flex;
-    align-items: center;
-    color: #FFFFFF;
+#dateANDhour:hover {
+  background: #787676;
 }
 
-#toolbarActive{
-    position: absolute;
-    width: 20px;
-    height: 16.2px;
-    right:0;
-    bottom:11px;
-    opacity: 0.7;
-    cursor: pointer;
-}
-#toolbarActive:hover{
-    opacity: 1;
-}
-
-@keyframes toolbarUp{
-    100%{transform: translateY(-41px)}
+#footerHour {
+  position: absolute;
+  top: -7px;
+  left: 34px;
+  cursor: default;
+  font-family: Microsoft JhengHei;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
 }
 
-@keyframes toolbarDown{
-    from{transform: translateY(-41px)}
-    to{transform: translateY(0)}
+#footerDate {
+  position: absolute;
+  top: 7px;
+  left: 18px;
+  cursor: default;
+  font-family: Microsoft JhengHei;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 12px;
+  line-height: 16px;
+  display: flex;
+  align-items: center;
+  color: #ffffff;
 }
 
-@keyframes windowsMenuUp{
-    0%{transform: translateY(100%);visibility: visible;}
-    100%{transform: translateY(0);visibility: visible;}
+#toolbarActive {
+  position: absolute;
+  width: 20px;
+  height: 16.2px;
+  right: 0;
+  bottom: 11px;
+  opacity: 0.7;
+  cursor: pointer;
+}
+#toolbarActive:hover {
+  opacity: 1;
+}
+
+@keyframes toolbarUp {
+  100% {
+    transform: translateY(-41px);
+  }
+}
+
+@keyframes toolbarDown {
+  from {
+    transform: translateY(-41px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+@keyframes windowsMenuUp {
+  0% {
+    transform: translateY(100%);
+    visibility: visible;
+  }
+  100% {
+    transform: translateY(0);
+    visibility: visible;
+  }
 }

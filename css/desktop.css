@@ -1,221 +1,400 @@
-html, body{
-    background:black;
+html,
+body {
+  background: black;
 }
-#backgroundD{
-    position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100vh;
-    background-image: url("../images/desktop/background.jpg");
-    background-size: 100%;
+#backgroundD {
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: url("../images/desktop/background.jpg");
+  background-size: 100%;
+  opacity: 0;
+}
+
+#icon1 {
+  position: absolute;
+  width: 61px;
+  height: 61px;
+  left: 8px;
+  top: 7px;
+}
+
+#frame1,
+#frame2,
+#frame3,
+#frame4 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #7dc1ff;
+  opacity: 0;
+  border: 1px solid #4967d2;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+#icon1 img,
+#icon2 img,
+#icon3 img,
+#icon4 img {
+  position: absolute;
+  width: 100%;
+}
+
+#frame1:hover,
+#frame2:hover,
+#frame3:hover,
+#frame4:hover {
+  opacity: 0.3;
+}
+
+#icon2 {
+  position: absolute;
+  width: 61px;
+  height: 61px;
+  left: 8px;
+  top: 80px;
+}
+
+#icon3 {
+  position: absolute;
+  width: 61px;
+  height: 61px;
+  left: 8px;
+  top: 160px;
+}
+
+#icon4 {
+  position: absolute;
+  width: 61px;
+  height: 61px;
+  left: 8px;
+  top: 240px;
+}
+
+#file {
+  position: fixed;
+  z-index: 1;
+  width: 786px;
+  height: 430px;
+  left: 259px;
+  top: 169px;
+  background: #ffffff;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+}
+
+#headerFile {
+  position: absolute;
+  width: 100%;
+  height: 35px;
+  top: 0;
+  background: white;
+}
+
+#closeFrame {
+  position: absolute;
+  width: 39px;
+  height: 33px;
+  right: 1px;
+  top: 1px;
+  background: white;
+}
+#closeFrame img {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  top: 7px;
+  left: 10px;
+}
+#growFrame {
+  position: absolute;
+  width: 39px;
+  height: 33px;
+  right: 41px;
+  top: 1px;
+  background: white;
+}
+#growFrame img {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  top: 7px;
+  left: 10px;
+}
+#smallFrame {
+  position: absolute;
+  width: 39px;
+  height: 33px;
+  right: 81px;
+  top: 1px;
+  background: white;
+}
+#smallFrame img {
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  top: 7px;
+  left: 10px;
+}
+
+#closeFrame:hover {
+  background: red;
+}
+
+#growFrame:hover,
+#smallFrame:hover {
+  background: #e2e2e2;
+}
+
+#chromePage {
+  position: fixed;
+  z-index: 1;
+  width: 80%;
+  height: 90%;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#chromePage h1,
+#file h1,
+#spotify h1,
+#snakePage h1 {
+  position: absolute;
+  top: 5px;
+  left: 15px;
+
+  font-family: Microsoft JhengHei;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  color: #000000;
+}
+
+#chromePage iframe {
+  position: absolute;
+  width: 99%;
+  left: 0.5%;
+  top: 10%;
+  height: 89%;
+}
+
+#chromeURL {
+  position: absolute;
+  min-width: 50%;
+  max-width: 50%;
+  max-height: 2%;
+  min-height: 2%;
+  top: 7%;
+  left: 0.5%;
+}
+
+#chromeURLEnter {
+  position: absolute;
+  height: 3%;
+  top: 7%;
+  left: 50%;
+}
+
+#headerChrome {
+  position: absolute;
+  width: 100%;
+  height: 35px;
+  top: 0;
+  background: white;
+}
+
+#spotify {
+  position: fixed;
+  z-index: 1;
+  width: 80%;
+  height: 90%;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#spotify iframe,
+#snakePage iframe {
+  position: absolute;
+  width: 99%;
+  left: 0.5%;
+  top: 7%;
+  height: 92%;
+}
+
+#headerSpotify {
+  position: absolute;
+  width: 100%;
+  height: 35px;
+  top: 0;
+  background: white;
+}
+
+#snakePage {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  background: white;
+  opacity: 0;
+  visibility: hidden;
+}
+
+#backgroundEdit {
+  position: absolute;
+  left: 1%;
+  top: 10%;
+  width: 98%;
+  height: 87%;
+  background: white;
+  border: 1px solid #515151;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: scroll;
+}
+
+#backgroundChoose1 {
+  top: 1%;
+  position: absolute;
+  left: 1%;
+  width: 30%;
+  height: 33%;
+}
+
+#backgroundChoose2 {
+  top: 1%;
+  position: absolute;
+  left: 35%;
+  width: 30%;
+  height: 33%;
+}
+
+#backgroundChoose3 {
+  top: 1%;
+  position: absolute;
+  left: 69%;
+  width: 30%;
+  height: 33%;
+}
+
+#backgroundChoose4 {
+  top: 50%;
+  position: absolute;
+  left: 1%;
+  width: 30%;
+  height: 33%;
+}
+
+#backgroundChoose5 {
+  top: 50%;
+  position: absolute;
+  left: 35%;
+  width: 30%;
+  height: 33%;
+}
+
+#backgroundChoose6 {
+  top: 50%;
+  position: absolute;
+  left: 69%;
+  width: 30%;
+  height: 33%;
+}
+
+#backgroundChoose7 {
+  top: 100%;
+  position: absolute;
+  left: 1%;
+  width: 30%;
+  height: 33%;
+}
+
+#backgroundChoose8 {
+  top: 100%;
+  position: absolute;
+  left: 35%;
+  width: 30%;
+  height: 33%;
+}
+
+#backgroundChoose9 {
+  top: 100%;
+  position: absolute;
+  left: 69%;
+  width: 30%;
+  height: 33%;
+}
+
+.backgroundChoose img {
+  width: 100%;
+  height: 90%;
+}
+
+.backgroundChoose p {
+  text-align: center;
+  font-family: Microsoft JhengHei;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  color: white;
+  background: #515151;
+  padding: 5px 0;
+  cursor: default;
+}
+
+.backgroundChoose p:hover {
+  background: #787676;
+}
+
+#calculator {
+  position: fixed;
+  z-index: 1;
+  width: 218px;
+  height: 350px;
+  left: 259px;
+  top: 169px;
+  background: #ffffff;
+  box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.45);
+  opacity: 0;
+  visibility: hidden;
+}
+
+#calculator h1 {
+  margin-left: 15px;
+  font-family: Microsoft JhengHei;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 13px;
+  line-height: 15px;
+  margin-bottom: 15px;
+  color: #000000;
+}
+
+.calculatorButton {
+  width: 50px;
+  height: 50px;
+  font-size: 25px;
+}
+
+.calculatorPrompt {
+  width: 204px;
+  margin-left: 3px;
+  font-size: 25px;
+}
+
+@keyframes openFile {
+  from {
     opacity: 0;
-}
-
-#icon1{
-    position: absolute;
-    width: 61px;
-    height: 61px;
-    left: 8px;
-    top: 7px;
-}
-
-#frame1, #frame2, #frame3, #frame4{
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    background: #7DC1FF;
-    opacity: 0;
-    border: 1px solid #4967D2;
-    box-sizing: border-box;
-    cursor: pointer;
-}
-
-#icon1 img, #icon2 img, #icon3 img, #icon4 img{
-    position: absolute;
-    width:100%;
-}
-
-#frame1:hover, #frame2:hover, #frame3:hover, #frame4:hover{
-    opacity: 0.3;
-}
-
-#icon2{
-    position: absolute;
-    width: 61px;
-    height: 61px;
-    left: 8px;
-    top: 80px;
-}
-
-#icon3{
-    position: absolute;
-    width: 61px;
-    height: 61px;
-    left: 8px;
-    top: 160px;
-}
-
-#icon4{
-    position: absolute;
-    width: 61px;
-    height: 61px;
-    left: 8px;
-    top: 240px;
-}
-
-
-#file{
-    position: fixed;
-    z-index: 1;
-    width: 786px;
-    height: 430px;
-    left: 259px;
-    top: 169px;
-    background: #FFFFFF;
-    box-shadow: 0px 1px 15px rgba(0, 0, 0, 0.45);
-    opacity:0;
-    visibility: hidden;
-}
-
-#headerFile{
-    position: absolute;
-    width: 100%;
-    height: 35px;
-    top:0;
-    background: white;
-}
-
-#closeFrame{
-    position: absolute;
-    width: 39px;
-    height: 33px;
-    right: 1px;
-    top: 1px;
-    background: white;
-}
-#closeFrame img{
-    position: absolute;
-    width: 19px;
-    height: 19px;
-    top:7px;
-    left:10px;
-}
-#growFrame{
-    position: absolute;
-    width: 39px;
-    height: 33px;
-    right: 41px;
-    top: 1px;
-    background:white;
-}
-#growFrame img{
-    position: absolute;
-    width: 19px;
-    height: 19px;
-    top:7px;
-    left:10px;
-}
-#smallFrame{
-    position: absolute;
-    width: 39px;
-    height: 33px;
-    right: 81px;
-    top: 1px;
-    background: white;
-}
-#smallFrame img{
-    position: absolute;
-    width: 19px;
-    height: 19px;
-    top:7px;
-    left:10px;
-}
-
-#closeFrame:hover{
-    background: red;
-}
-
-#growFrame:hover, #smallFrame:hover{
-    background: #E2E2E2;
-}
-
-#chromePage{
-    position: fixed;
-    z-index: 1;
-    width: 80%;
-    height: 90%;
-    background: white;
-    opacity: 0;
-    visibility: hidden;
-}
-
-#chromePage h1,#file h1, #spotify h1, #snakePage h1{
-    position: absolute;
-    top: 5px;
-    left: 15px;
-
-    font-family: Microsoft JhengHei;
-    font-style: normal;
-    font-weight: normal;
-    font-size: 13px;
-    line-height: 15px;
-    color: #000000;
-}
-
-#chromePage iframe{
-    position: absolute;
-    width: 99%;
-    left:0.5%;
-    top: 7%;
-    height: 92%;
-}
-
-#headerChrome{
-    position: absolute;
-    width: 100%;
-    height: 35px;
-    top:0;
-    background: white;
-}
-
-#spotify{
-    position: fixed;
-    z-index: 1;
-    width: 80%;
-    height: 90%;
-    background: white;
-    opacity: 0;
-    visibility: hidden;
-}
-
-#spotify iframe, #snakePage iframe{
-    position: absolute;
-    width: 99%;
-    left:0.5%;
-    top: 7%;
-    height: 92%;
-}
-
-#headerSpotify{
-    position: absolute;
-    width: 100%;
-    height: 35px;
-    top:0;
-    background: white;
-}
-
-#snakePage{
-    position: fixed;
-    z-index: 1;
-    width: 100%;
-    height: 100%;
-    background: white;
-    opacity: 0;
-    visibility: hidden;
-}
-
-
-@keyframes openFile{
-    from{opacity:0;visibility:visible}
-    to{opacity:1;visibility:visible}
+    visibility: visible;
+  }
+  to {
+    opacity: 1;
+    visibility: visible;
+  }
 }

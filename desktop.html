@@ -1,145 +1,419 @@
 <!DOCTYPE html>
 <html lang="en" onkeypress="test(event)">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Windows10</title>
-    <link href="css/general.css" rel="stylesheet">
-    <link href="css/desktop.css" rel="stylesheet">
-    <link href="css/toolbar.css" rel="stylesheet">
-    <link href="css/contextmenu.css" rel="stylesheet">
-    <link rel="icon" href="images/logo.png">   
-</head>
-<body onload="desktopLoad()" onmousedown="leftClick(event)"> 
+    <link href="css/general.css" rel="stylesheet" />
+    <link href="css/desktop.css" rel="stylesheet" />
+    <link href="css/toolbar.css" rel="stylesheet" />
+    <link href="css/contextmenu.css" rel="stylesheet" />
+    <link rel="icon" href="images/logo.png" />
+  </head>
+  <body onload="desktopLoad()" onmousedown="leftClick(event)">
     <div id="backgroundD" onmousedown="leftClick2(event)"></div>
 
     <div id="icon1" onclick="openBin()">
-        <img src="images/desktop/bin.png" alt="bin">
-        <div id="frame1"></div>
+      <img src="images/desktop/bin.png" alt="bin" />
+      <div id="frame1"></div>
     </div>
     <div id="icon2" onclick="openFile()">
-        <img src="images/desktop/file.png" alt="file">
-        <div id="frame2"></div>
+      <img src="images/desktop/file.png" alt="file" />
+      <div id="frame2"></div>
     </div>
     <div id="icon3" onclick="openChrome()">
-        <img src="images/desktop/chrome.png" alt="chrome">
-        <div id="frame3"></div>
+      <img src="images/desktop/chrome.png" alt="chrome" />
+      <div id="frame3"></div>
     </div>
     <div id="icon4" onclick="openSpotify()">
-        <img src="images/desktop/spotify.png" alt="spotify">
-        <div id="frame4"></div>
+      <img src="images/desktop/spotify.png" alt="spotify" />
+      <div id="frame4"></div>
     </div>
 
     <div id="chromePage" onclick="changeChromeForeground()">
-        <div id="headerChrome">
-            <h1>Google Chrome</h1>
-            <div id="closeFrame">
-                <img src="images/desktop/close.svg" alt="close" onclick="closeChrome()">
-            </div>
-            <div id="growFrame">
-                <img src="images/desktop/grow.svg" alt="grow" onclick="growChrome()">
-            </div>
-            <div id="smallFrame">
-                <img src="images/desktop/small.svg" alt="small" onclick="smallChrome()">
-            </div>
+      <div id="headerChrome">
+        <h1>Google Chrome</h1>
+        <div id="closeFrame">
+          <img
+            src="images/desktop/close.svg"
+            alt="close"
+            onclick="closeChrome()"
+          />
         </div>
-        <iframe id="chromeIFrame"></iframe>
+        <div id="growFrame">
+          <img
+            src="images/desktop/grow.svg"
+            alt="grow"
+            onclick="growChrome()"
+          />
+        </div>
+        <div id="smallFrame">
+          <img
+            src="images/desktop/small.svg"
+            alt="small"
+            onclick="smallChrome()"
+          />
+        </div>
+      </div>
+      <textarea id="chromeURL" placeholder=""></textarea>
+      <button id="chromeURLEnter" onclick="chromeSetURL()">Go</button>
+      <iframe id="chromeIFrame"></iframe>
     </div>
 
     <div id="spotify" onclick="changeSpotifyForeground()">
-        <div id="headerSpotify">
-            <h1>Spotify</h1>
-            <div id="closeFrame">
-                <img src="images/desktop/close.svg" alt="close" onclick="closeSpotify()">
-            </div>
-            <div id="growFrame">
-                <img src="images/desktop/grow.svg" alt="grow" onclick="growSpotify()">
-            </div>
-            <div id="smallFrame">
-                <img src="images/desktop/small.svg" alt="small" onclick="smallSpotify()">
-            </div>
+      <div id="headerSpotify">
+        <h1>Spotify</h1>
+        <div id="closeFrame">
+          <img
+            src="images/desktop/close.svg"
+            alt="close"
+            onclick="closeSpotify()"
+          />
         </div>
-        <iframe id="spotifyIFrame" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+        <div id="growFrame">
+          <img
+            src="images/desktop/grow.svg"
+            alt="grow"
+            onclick="growSpotify()"
+          />
+        </div>
+        <div id="smallFrame">
+          <img
+            src="images/desktop/small.svg"
+            alt="small"
+            onclick="smallSpotify()"
+          />
+        </div>
+      </div>
+      <iframe
+        id="spotifyIFrame"
+        frameborder="0"
+        allowtransparency="true"
+        allow="encrypted-media"
+      ></iframe>
     </div>
 
     <div id="file" onclick="changeFileForeground()">
-        <div id="headerFile">
-            <h1>Fichiers</h1>
-            <div id="closeFrame" onclick="closeFile()">
-                <img src="images/desktop/close.svg" alt="close">
-            </div>
-            <div id="growFrame" onclick="growFile()">
-                <img src="images/desktop/grow.svg" alt="grow">
-            </div>
-            <div id="smallFrame" onclick="smallFile()">
-                <img src="images/desktop/small.svg" alt="small">
-            </div>
+      <div id="headerFile">
+        <h1>Fichiers</h1>
+        <div id="closeFrame" onclick="closeFile()">
+          <img src="images/desktop/close.svg" alt="close" />
         </div>
+        <div id="growFrame" onclick="growFile()">
+          <img src="images/desktop/grow.svg" alt="grow" />
+        </div>
+        <div id="smallFrame" onclick="smallFile()">
+          <img src="images/desktop/small.svg" alt="small" />
+        </div>
+      </div>
+      <div id="backgroundEdit">
+        <div class="backgroundChoose" id="backgroundChoose1">
+          <img src="images/desktop/background.jpg" alt="background1" />
+          <p onclick="changeBackground1()">Définir</p>
+        </div>
+        <div class="backgroundChoose" id="backgroundChoose2">
+          <img src="images/desktop/background2.jpg" alt="background2" />
+          <p onclick="changeBackground2()">Définir</p>
+        </div>
+        <div class="backgroundChoose" id="backgroundChoose3">
+          <img src="images/desktop/background3.jpg" alt="background3" />
+          <p onclick="changeBackground3()">Définir</p>
+        </div>
+        <div class="backgroundChoose" id="backgroundChoose4">
+          <img src="images/desktop/background4.jpg" alt="background4" />
+          <p onclick="changeBackground4()">Définir</p>
+        </div>
+        <div class="backgroundChoose" id="backgroundChoose5">
+          <img src="images/desktop/background5.png" alt="background5" />
+          <p onclick="changeBackground5()">Définir</p>
+        </div>
+        <div class="backgroundChoose" id="backgroundChoose6">
+          <img src="images/desktop/background6.jpg" alt="background6" />
+          <p onclick="changeBackground6()">Définir</p>
+        </div>
+        <div class="backgroundChoose" id="backgroundChoose7">
+          <img src="images/desktop/background7.jpg" alt="background7" />
+          <p onclick="changeBackground7()">Définir</p>
+        </div>
+        <div class="backgroundChoose" id="backgroundChoose8">
+          <img src="images/desktop/background8.jpg" alt="background8" />
+          <p onclick="changeBackground8()">Définir</p>
+        </div>
+        <div class="backgroundChoose" id="backgroundChoose9">
+          <img src="images/desktop/background9.png" alt="background9" />
+          <p onclick="changeBackground9()">Définir</p>
+        </div>
+      </div>
     </div>
-    
+
     <div id="toolbarFrame" onmouseover="toolbarUp()" onmouseout="toolbarDown()">
-    <footer id="toolbar" onmousedown="leftClick2(event)">
-        <img id="windowLogo" src="images/desktop/windowLogo.svg" alt="windowLogo" onclick="windowsMenuOpen()">
+      <footer id="toolbar" onmousedown="leftClick2(event)">
+        <img
+          id="windowLogo"
+          src="images/desktop/windowLogo.svg"
+          alt="windowLogo"
+          onclick="windowsMenuOpen()"
+        />
         <div id="searchBar"></div>
         <div id="fileTB">
-            <img src="images/desktop/file.png" alt="file" onclick="openFile()">
-            <div id="footerTB1"></div>
+          <img src="images/desktop/file.png" alt="file" onclick="openFile()" />
+          <div id="footerTB1"></div>
         </div>
         <div id="chromeTB">
-            <img src="images/desktop/chrome.png" alt="chrome" onclick="openChrome()">
-            <div id="footerTB2"></div>
+          <img
+            src="images/desktop/chrome.png"
+            alt="chrome"
+            onclick="openChrome()"
+          />
+          <div id="footerTB2"></div>
         </div>
         <div id="spotifyTB">
-            <img src="images/desktop/spotify.png" alt="spotify" onclick="openSpotify()">
-            <div id="footerTB3"></div>
+          <img
+            src="images/desktop/spotify.png"
+            alt="spotify"
+            onclick="openSpotify()"
+          />
+          <div id="footerTB3"></div>
         </div>
         <div id="dateANDhour">
-            <p id="footerHour"></p>
-            <p id="footerDate"></p>
+          <p id="footerHour"></p>
+          <p id="footerDate"></p>
         </div>
-        <img id="toolbarActive" src="images/desktop/toolbarActive.svg" alt="toolbarActive" onclick="activeToolbar()">
-    </footer>
+        <img
+          id="toolbarActive"
+          src="images/desktop/toolbarActive.svg"
+          alt="toolbarActive"
+          onclick="activeToolbar()"
+        />
+      </footer>
     </div>
     <div id="windowsMenu">
-        <div id="offSystem" onclick="stopSystem()">
-            <img src="images/desktop/off.png" alt="off">
-            <p>Arrêter le système</p>
-        </div>
-        <div id="snakeGame" onclick="launchSnake()">
-            <img src="images/desktop/snake.png" alt="snake">
-            <p>Jouer à snake</p>
-        </div>
+      <div id="offSystem" onclick="stopSystem()">
+        <img src="images/desktop/off.png" alt="off" />
+        <p>Arrêter le système</p>
+      </div>
+      <div id="snakeGame" onclick="launchSnake()">
+        <img src="images/desktop/snake.png" alt="snake" />
+        <p>Jouer à snake</p>
+      </div>
+      <div id="calculatorIcon" onclick="openCalculator()">
+        <img src="images/desktop/calcul.png" alt="calculator" />
+        <p>Calculatrice</p>
+      </div>
     </div>
 
     <div id="snakePage">
-        <div id="headerSnake">
-            <h1>Snake</h1>
-            <div id="closeFrame" onclick="closeSnake()">
-                <img src="images/desktop/close.svg" alt="close">
-            </div>
-            <div id="growFrame">
-                <img src="images/desktop/grow.svg" alt="grow">
-            </div>
-            <div id="smallFrame">
-                <img src="images/desktop/small.svg" alt="small">
-            </div>
+      <div id="headerSnake">
+        <h1>Snake</h1>
+        <div id="closeFrame" onclick="closeSnake()">
+          <img src="images/desktop/close.svg" alt="close" />
         </div>
-        <iframe id="snakeIFrame" src="snake.html"></iframe>
+        <div id="growFrame">
+          <img src="images/desktop/grow.svg" alt="grow" />
+        </div>
+        <div id="smallFrame">
+          <img src="images/desktop/small.svg" alt="small" />
+        </div>
+      </div>
+      <iframe id="snakeIFrame" src="snake.html"></iframe>
+    </div>
+
+    <div id="calculator">
+      <div id="headerCalculator">
+        <h1>Calculatrice</h1>
+        <div id="closeFrame">
+          <img
+            src="images/desktop/close.svg"
+            alt="close"
+            onclick="closeCalculator()"
+          />
+        </div>
+        <div id="growFrame">
+          <img src="images/desktop/grow.svg" alt="grow" />
+        </div>
+        <div id="smallFrame">
+          <img src="images/desktop/small.svg" alt="small" />
+        </div>
+      </div>
+      <form name="form">
+        <input class="calculatorPrompt" name="textview" />
+      </form>
+      <table>
+        <tr>
+          <td>
+            <input
+              class="calculatorButton"
+              type="button"
+              value="C"
+              onclick="clean()"
+            />
+          </td>
+          <td>
+            <input
+              class="calculatorButton"
+              type="button"
+              value="<"
+              onclick="back()"
+            />
+          </td>
+          <td>
+            <input
+              class="calculatorButton"
+              type="button"
+              value="/"
+              onclick="insert('/')"
+            />
+          </td>
+          <td>
+            <input
+              class="calculatorButton"
+              type="button"
+              value="x"
+              onclick="insert('*')"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="calculatorButton"
+              type="button"
+              value="7"
+              onclick="insert(7)"
+            />
+          </td>
+          <td>
+            <input
+              class="calculatorButton"
+              type="button"
+              value="8"
+              onclick="insert(8)"
+            />
+          </td>
+          <td>
+            <input
+              class="calculatorButton"
+              type="button"
+              value="9"
+              onclick="insert(9)"
+            />
+          </td>
+          <td>
+            <input
+              class="calculatorButton"
+              type="button"
+              value="-"
+              onclick="insert('-')"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="calculatorButton"
+              type="button"
+              value="4"
+              onclick="insert(4)"
+            />
+          </td>
+          <td>
+            <input
+              class="calculatorButton"
+              type="button"
+              value="5"
+              onclick="insert(5)"
+            />
+          </td>
+          <td>
+            <input
+              class="calculatorButton"
+              type="button"
+              value="6"
+              onclick="insert(6)"
+            />
+          </td>
+          <td>
+            <input
+              class="calculatorButton"
+              type="button"
+              value="+"
+              onclick="insert('+')"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td>
+            <input
+              class="calculatorButton"
+              type="button"
+              value="1"
+              onclick="insert(1)"
+            />
+          </td>
+          <td>
+            <input
+              class="calculatorButton"
+              type="button"
+              value="2"
+              onclick="insert(2)"
+            />
+          </td>
+          <td>
+            <input
+              class="calculatorButton"
+              type="button"
+              value="3"
+              onclick="insert(3)"
+            />
+          </td>
+          <td rowspan="5">
+            <input
+              style="height: 104px;"
+              class="calculatorButton"
+              type="button"
+              value="="
+              onclick="equal()"
+            />
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input
+              style="width: 104px;"
+              class="calculatorButton"
+              type="button"
+              value="0"
+              onclick="insert(0)"
+            />
+          </td>
+          <td>
+            <input
+              class="calculatorButton"
+              type="button"
+              value="."
+              onclick="insert('.')"
+            />
+          </td>
+        </tr>
+      </table>
     </div>
 
     <div id="rightMenu">
-        <div id="newCMButton">
-            <p>Nouveau</p>
-        </div>
-        <div id="cutCMButton">
-            <p>Couper</p>
-        </div>
-        <div id="copyCMButton">
-            <p>Copier</p>
-        </div>
-        <div id="pasteCMButton">
-            <p>Coller</p>
-        </div>
+      <div id="newCMButton">
+        <p>Nouveau</p>
+      </div>
+      <div id="cutCMButton">
+        <p>Couper</p>
+      </div>
+      <div id="copyCMButton">
+        <p>Copier</p>
+      </div>
+      <div id="pasteCMButton">
+        <p>Coller</p>
+      </div>
+      <div id="backgroundCMButton" onclick="openFileBackground()">
+        <p>Changer Fond</p>
+      </div>
     </div>
     <script src="js/desktop.js"></script>
     <script src="js/general.js"></script>
@@ -147,5 +421,7 @@
     <script src="js/dragchrome.js"></script>
     <script src="js/dragspotify.js"></script>
     <script src="js/browser.js"></script>
-</body>
+    <script src="js/background.js"></script>
+    <script src="js/calcul.js"></script>
+  </body>
 </html>
